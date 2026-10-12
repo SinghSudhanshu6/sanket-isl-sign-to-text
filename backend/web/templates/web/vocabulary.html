@@ -1,0 +1,16 @@
+{% extends "web/base.html" %}
+{% block title %}Sanket - vocabulary{% endblock %}
+{% block content %}
+<h1 class="text-2xl font-bold">Starter vocabulary <span class="text-slate-400 text-base font-normal">({{ total }} signs)</span></h1>
+<p class="text-sm text-slate-600 mt-2 max-w-2xl">Every sign must be checked against the official ISLRTC dictionary and learned from a real signer. The "verified" column starts empty on purpose - tick it in the admin once a sign is confirmed.</p>
+<div class="mt-6 grid md:grid-cols-2 gap-4">
+{% for group, items in groups %}
+  <section class="rounded-xl bg-white border p-4">
+    <h2 class="font-semibold mb-2">{{ group }}</h2>
+    <div class="flex flex-wrap gap-2">
+      {% for s in items %}<span class="px-2.5 py-1 rounded-full text-xs border {% if s.islrtc_verified %}bg-emerald-50 border-emerald-300 text-emerald-800{% else %}bg-slate-50 border-slate-200{% endif %}" title="{{ s.english }} - {{ s.kind }}">{{ s.gloss }}{% if s.islrtc_verified %} &#10003;{% endif %}</span>{% endfor %}
+    </div>
+  </section>
+{% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "web/base.html" %}
+{% block title %}Sanket - validation{% endblock %}
+{% block content %}
+<h1 class="text-2xl font-bold">Validation: this isn't a guess</h1>
+<p class="text-sm text-slate-600 mt-2">Evidence from real conversations with ISL users, interpreters and Deaf-school teachers. Entries are added in the Django admin (Interviews).</p>
+{% if total == 0 %}
+<div class="mt-6 rounded-xl border-2 border-dashed border-amber-300 bg-amber-50 p-5 text-sm text-amber-900">
+  No interviews recorded yet. Slide 2 of the pitch deck is still a placeholder - add real interviews in <code>/admin/api/interview/</code> before Round 1. Nothing on this page is pre-filled on purpose.
+</div>
+{% else %}
+<div class="mt-6 grid md:grid-cols-3 gap-4">
+  <section class="rounded-xl bg-white border p-4"><h2 class="font-semibold">Who we spoke with</h2>
+    <p class="text-3xl font-bold text-indigo-600 mt-1">{{ total }}</p>
+    <ul class="text-sm text-slate-600 mt-2">{% for label, n in counts %}<li>{{ n }} &times; {{ label }}</li>{% endfor %}</ul></section>
+  <section class="rounded-xl bg-white border p-4"><h2 class="font-semibold">What we heard</h2>
+    {% for i in quotes %}<blockquote class="text-sm text-slate-600 mt-2 border-l-4 border-indigo-200 pl-3">{{ i.quote }}</blockquote>{% empty %}<p class="text-sm text-slate-400 mt-2">No quotes yet.</p>{% endfor %}</section>
+  <section class="rounded-xl bg-white border p-4"><h2 class="font-semibold">Current workaround</h2>
+    <ul class="text-sm text-slate-600 mt-2 list-disc ml-4">{% for w in workarounds %}<li>{{ w }}</li>{% empty %}<li class="list-none -ml-4 text-slate-400">None recorded.</li>{% endfor %}</ul></section>
+</div>
+{% endif %}
+{% endblock %}

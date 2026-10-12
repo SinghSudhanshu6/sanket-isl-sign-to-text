@@ -1,0 +1,17 @@
+{% extends "web/base.html" %}
+{% block title %}Sanket - metrics{% endblock %}
+{% block content %}
+<h1 class="text-2xl font-bold">Round 2 numbers</h1>
+<p class="text-sm text-slate-600 mt-2">Computed from trials saved in the demo ("Measure" panel). Accuracy counts only trials marked as a signer <b>not in the training data</b>.</p>
+<div class="mt-6 grid sm:grid-cols-3 gap-4">
+  <div class="rounded-xl bg-white border p-5"><div class="text-xs uppercase text-slate-400">Recognition accuracy (unseen signers)</div>
+    <div class="text-4xl font-bold text-indigo-600 mt-1">{% if m.accuracy_held_out is not None %}{{ m.accuracy_held_out }}%{% else %}&ndash;{% endif %}</div>
+    <div class="text-xs text-slate-500 mt-1">{{ m.held_out_trials }} held-out trial(s)</div></div>
+  <div class="rounded-xl bg-white border p-5"><div class="text-xs uppercase text-slate-400">Time-to-prompt: Sanket</div>
+    <div class="text-4xl font-bold mt-1">{% if m.avg_sanket_s is not None %}{{ m.avg_sanket_s }}s{% else %}&ndash;{% endif %}</div></div>
+  <div class="rounded-xl bg-white border p-5"><div class="text-xs uppercase text-slate-400">Time-to-prompt: typing</div>
+    <div class="text-4xl font-bold mt-1">{% if m.avg_typing_s is not None %}{{ m.avg_typing_s }}s{% else %}&ndash;{% endif %}</div>
+    <div class="text-xs text-slate-500 mt-1">{{ m.timed_trials }} timed trial(s)</div></div>
+</div>
+{% if not m.trials %}<p class="mt-6 text-sm text-amber-800 bg-amber-50 border border-amber-200 rounded-lg p-3">No trials yet - record some in the demo's Measure panel. Numbers are never invented.</p>{% endif %}
+{% endblock %}

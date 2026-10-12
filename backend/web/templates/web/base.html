@@ -1,0 +1,24 @@
+{% load static %}<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Sanket - sign to any AI chatbot{% endblock %}</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  {% block head %}{% endblock %}
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased">
+<header class="bg-white border-b border-slate-200">
+  <nav class="max-w-5xl mx-auto px-4 py-3 flex items-center gap-6 text-sm">
+    <a href="{% url 'home' %}" class="text-xl font-extrabold tracking-tight text-indigo-700">SANKET</a>
+    <a href="{% url 'demo' %}" class="hover:text-indigo-700">Live demo</a>
+    <a href="{% url 'vocabulary' %}" class="hover:text-indigo-700">Vocabulary</a>
+    <a href="{% url 'validation' %}" class="hover:text-indigo-700">Validation</a>
+    <a href="{% url 'metrics' %}" class="hover:text-indigo-700">Metrics</a>
+    <span class="ml-auto text-slate-400 hidden sm:inline">Team Hastavani &middot; Zero Origin Hackathon 2026</span>
+  </nav>
+</header>
+<main class="max-w-5xl mx-auto px-4 py-8">{% block content %}{% endblock %}</main>
+<footer class="max-w-5xl mx-auto px-4 pb-10 text-xs text-slate-400">No video ever leaves the device - only hand-landmark numbers are used.</footer>
+</body>
+</html>

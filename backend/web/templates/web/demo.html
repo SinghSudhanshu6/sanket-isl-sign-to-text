@@ -1,0 +1,42 @@
+{% extends "web/base.html" %}
+{% load static %}
+{% block title %}Sanket Studio{% endblock %}
+{% block head %}<link rel="stylesheet" href="{% static 'sanket/sanket.css' %}">{% endblock %}
+{% block content %}
+<div class="grid lg:grid-cols-[minmax(0,26rem)_1fr] gap-6 items-start">
+  <div id="sanket-root"></div>
+  <div class="rounded-xl bg-white border p-4 space-y-3">
+    <h2 class="font-semibold">Mock chatbot <span class="text-xs font-normal text-slate-400">(stands in for ChatGPT / Claude / Gemini on this page; the Chrome extension injects into the real ones)</span></h2>
+    <label class="text-xs text-slate-500">Chatbot input box</label>
+    <textarea id="mock-input" rows="3" class="w-full border rounded-lg p-2 text-sm" placeholder="Confirmed prompt appears here..."></textarea>
+    <label class="text-xs text-slate-500">Chatbot reply (paste an answer here, then press "Use chatbot reply" in the panel)</label>
+    <textarea id="mock-reply" rows="8" class="w-full border rounded-lg p-2 text-sm" placeholder="Paste any chatbot answer here..."></textarea>
+    <p class="text-xs text-slate-400">Intent/simplify mode: <b>{% if llm %}LLM + rules fallback{% else %}rule engine (no API key set){% endif %}</b></p>
+  </div>
+</div>
+<script src="{% static 'vendor/mediapipe/hands/hands.js' %}"></script>
+<script src="{% static 'sanket/core.js' %}"></script>
+<script src="{% static 'sanket/lexicon.js' %}"></script>
+<script src="{% static 'sanket/shortcuts.js' %}"></script>
+<script src="{% static 'sanket/intent.js' %}"></script>
+<script src="{% static 'sanket/simplify.js' %}"></script>
+<script>
+  window.SANKET_HOST = {
+    name: "studio",
+    mode: "studio",
+    useBackend: true,
+    apiBase: "",
+    getSetting(k, d) { try { const v = localStorage.getItem("sanket." + k); return Promise.resolve(v === null ? d : JSON.parse(v)); } catch (e) { return Promise.resolve(d); } },
+    setSetting(k, v) { try { localStorage.setItem("sanket." + k, JSON.stringify(v)); } catch (e) { /* ignore */ } return Promise.resolve(); },
+    assetBase: "{% static 'vendor/mediapipe/hands/' %}",
+    async inject(text) {
+      const el = document.getElementById("mock-input");
+      el.value = text; el.focus();
+      return { ok: true, detail: "Placed in the demo chatbox." };
+    },
+    async getLastReply() { return document.getElementById("mock-reply").value; },
+  };
+</script>
+<script src="{% static 'sanket/app.js' %}"></script>
+<script src="{% static 'studio/studio.js' %}"></script>
+{% endblock %}

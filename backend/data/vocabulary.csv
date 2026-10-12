@@ -1,0 +1,86 @@
+gloss,english,group,role,kind
+HELLO,hello,Greetings and manners,greet,dynamic
+THANK-YOU,thank you,Greetings and manners,greet,dynamic
+PLEASE,please,Greetings and manners,greet,dynamic
+SORRY,sorry,Greetings and manners,greet,dynamic
+YES,yes,Greetings and manners,misc,static
+NO,no,Greetings and manners,misc,static
+HELP,help,Greetings and manners,task,dynamic
+I,I / me,People,self,static
+YOU,you,People,misc,static
+MY,my,People,possessive,static
+TEACHER,teacher,People,person,dynamic
+DOCTOR,doctor,People,person,dynamic
+FRIEND,friend,People,person,dynamic
+FAMILY,family,People,person,dynamic
+WHAT,what,Question words,wh,dynamic
+WHERE,where,Question words,wh,dynamic
+WHEN,when,Question words,wh,dynamic
+HOW,how,Question words,wh,dynamic
+WHY,why,Question words,wh,dynamic
+WHO,who,Question words,wh,dynamic
+TODAY,today,Time,time,dynamic
+TOMORROW,tomorrow,Time,time,dynamic
+YESTERDAY,yesterday,Time,time,dynamic
+NOW,now,Time,time,static
+DATE,date,Time,topic,dynamic
+TIME,time,Time,topic,dynamic
+EXPLAIN,explain,Actions (tasks),task,dynamic
+WRITE,write,Actions (tasks),task,dynamic
+READ,read,Actions (tasks),task,dynamic
+TRANSLATE,translate,Actions (tasks),task,dynamic
+SUMMARY,summary,Actions (tasks),task,dynamic
+SEARCH,search,Actions (tasks),task,dynamic
+APPLY,apply,Actions (tasks),task,dynamic
+REMIND,remind,Actions (tasks),task,dynamic
+UNDERSTAND,understand,Actions (tasks),task,dynamic
+AGAIN,again,Actions (tasks),helper,dynamic
+SEND,send,Actions (tasks),task,dynamic
+WEATHER,weather,Topics,topic,dynamic
+RAIN,rain,Topics,topic,dynamic
+HOT,hot,Topics,topic,static
+COLD,cold,Topics,topic,static
+HOSPITAL,hospital,Topics,topic,dynamic
+SCHOOL,school,Topics,topic,dynamic
+EXAM,exam,Topics,topic,dynamic
+MONEY,money,Topics,topic,dynamic
+BANK,bank,Topics,topic,dynamic
+FOOD,food,Topics,topic,dynamic
+NEWS,news,Topics,topic,dynamic
+EMAIL,email,Topics,format,dynamic
+AADHAAR,Aadhaar card,Topics,topic,dynamic
+THIS,this,Helpers,this,static
+NOT,not,Helpers,neg,dynamic
+NEAR,near,Helpers,near,dynamic
+EASY,easy,Helpers,easy,dynamic
+SHORT,short,Helpers,short,dynamic
+HINDI,Hindi,Helpers,language,dynamic
+ENGLISH,English,Helpers,language,dynamic
+BYE,bye,Greetings and manners,greet,dynamic
+GOOD,good,Casual chat,good,dynamic
+MORNING,morning,Casual chat,daypart,dynamic
+NIGHT,night,Casual chat,daypart,dynamic
+FINE,fine,Casual chat,state,dynamic
+HAPPY,happy,Casual chat,state,dynamic
+BUSY,busy,Casual chat,state,dynamic
+FREE,free,Casual chat,state,dynamic
+MISS,miss,Casual chat,feel,dynamic
+LOVE,love,Casual chat,feel,dynamic
+HOME,home,Casual chat,place,dynamic
+DO,do / doing,Daily actions,do,dynamic
+EAT,eat,Daily actions,act,dynamic
+GO,go,Daily actions,act,dynamic
+COME,come,Daily actions,act,dynamic
+MEET,meet,Daily actions,act,dynamic
+CALL,call,Daily actions,act,dynamic
+WAIT,wait,Daily actions,act,dynamic
+0,0,Digits,digit,static
+1,1,Digits,digit,static
+2,2,Digits,digit,static
+3,3,Digits,digit,static
+4,4,Digits,digit,static
+5,5,Digits,digit,static
+6,6,Digits,digit,static
+7,7,Digits,digit,static
+8,8,Digits,digit,static
+9,9,Digits,digit,static
