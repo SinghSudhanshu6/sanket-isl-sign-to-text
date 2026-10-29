@@ -1,6 +1,6 @@
 # Sanket: sign language to text, on any website
 
-**Team SignForce · Zero Origin Hackathon 2026**
+**Team Code Mavricks** 
 
 > Sign in front of your camera. Sanket reads Indian Sign Language (ISL) on your device and types the sentence into the text box you are already using: WhatsApp Web, Instagram, Google search, Maps, ChatGPT, Claude, Gemini and more.
 
