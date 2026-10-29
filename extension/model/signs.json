@@ -1,0 +1,1 @@
+{"feature_dim":130,"version":1,"note":"Placeholder: no signs yet. Teach signs in the Sanket Studio, then run `python manage.py export_pack` (or download signs.json from the Studio) and replace this file.","signs":[]}
